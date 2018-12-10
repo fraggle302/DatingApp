@@ -1,6 +1,6 @@
 // tslint:disable-next-line:quotemark
 import { Injectable } from "@angular/core";
-import { HttpInterceptor, HttpEvent, HttpRequest, HttpErrorResponse, HttpHandler, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { HttpInterceptor, HttpEvent, HttpRequest, HttpErrorResponse, HttpHandler, HTTP_INTERCEPTORS } from '@angular/common/http';
 // tslint:disable-next-line:quotemark
 import { Observable, throwError } from "rxjs";
 // tslint:disable-next-line:quotemark
@@ -24,7 +24,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                     let modalStateErrors = '';
                     if (serverError && typeof serverError === 'object') {
                         for (const key in serverError) {
-                            if (serverError[Key]) {
+                            if (serverError[key]) {
                                 modalStateErrors += serverError[key] + '\n';
                             }
                         }
@@ -40,4 +40,4 @@ export const ErrorInterceptorProvider = {
     provide: HTTP_INTERCEPTORS,
     useClass: ErrorInterceptor,
     multi: true
-}
+};
